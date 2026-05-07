@@ -1,7 +1,7 @@
 [
   {
     "slug": "plataforma-academica-zajuna",
-    "title": "Plataforma académica Zajuna",
+    "title": "Desarrollo y soporte de plataforma académica Zajuna",
     "type": "Empresarial",
     "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
     "projectUrl": "https://zajuna.sena.edu.co/",
@@ -12,37 +12,81 @@
       "Python",
       "Go",
       "Vue.js",
-      "JavaScript",
-      "TypeScript",
       "PostgreSQL",
-      "MySQL",
+      "MySQL"
+    ],
+    "summary": "Participación en desarrollo, mantenimiento y soporte de una plataforma académica con módulos de cursos, calificaciones, asistencia, notificaciones e indicadores.",
+    "role": "Desarrollador de Software / Soporte Técnico de Aplicaciones",
+    "context": "El proyecto requería mantener y evolucionar módulos académicos, atender soporte funcional y técnico, realizar pruebas y documentar cambios para continuidad operativa.",
+    "highlights": [
+      "Desarrollo y mantenimiento de módulos para cursos, categorías, calificaciones, asistencia, notificaciones y paneles de indicadores.",
+      "Apoyo backend con Go, PHP, Laravel y Python según las necesidades técnicas del proyecto.",
+      "Ajustes front-end con Vue.js, JavaScript y TypeScript para mejorar interfaces web.",
+      "Participación en análisis de requerimientos, pruebas, documentación técnica, Jira y control de versiones."
+    ],
+    "decisions": [
+      "Priorización de trazabilidad, validaciones y buenas prácticas de codificación segura.",
+      "Separación de tareas de soporte, desarrollo y pruebas para reducir errores en módulos existentes.",
+      "Uso de documentación técnica para facilitar mantenimiento y continuidad del equipo."
+    ]
+  },
+  {
+    "slug": "despliegue-entornos-prueba",
+    "title": "Dockerización y despliegue en servidores de prueba",
+    "type": "Empresarial",
+    "imageUrl": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+    "projectUrl": "https://example.com/despliegue-entornos-prueba",
+    "projectUrlLabel": "Ver página",
+    "stack": [
       "Docker",
       "Linux",
       "Apache",
       "Nginx",
       "HTTPS",
-      "PHPMailer"
+      "FortiClient VPN"
     ],
-    "summary": "Participación en desarrollo, mantenimiento, soporte técnico, despliegue y automatización de procesos para una plataforma académica empresarial.",
-    "role": "Desarrollador de Software / Soporte Técnico de Aplicaciones / DevOps Junior",
-    "context": "Zajuna requería mantener y evolucionar módulos académicos, atender soporte funcional y técnico, validar cambios en entornos de prueba, gestionar bases de datos, apoyar despliegues y documentar procesos para continuidad operativa.",
+    "summary": "Levantamiento, configuración y despliegue de proyectos en entornos de prueba usando contenedores, servidores Linux y certificados HTTPS.",
+    "role": "DevOps Junior / Soporte de Aplicaciones",
+    "context": "Los equipos necesitaban entornos aislados y reproducibles para validar cambios antes de llevarlos a ambientes más estables.",
     "highlights": [
-      "Desarrollo y mantenimiento de módulos para cursos, categorías, calificaciones, asistencia, notificaciones y paneles de indicadores.",
-      "Apoyo backend con Go, PHP, Laravel y Python según las necesidades técnicas del proyecto.",
-      "Ajustes front-end con Vue.js, JavaScript y TypeScript para mejorar interfaces web.",
-      "Gestión, consulta y validación de información en bases de datos PostgreSQL y MySQL.",
-      "Creación de scripts en Python para automatizar análisis de información y generación de reportes desde consola Linux.",
-      "Dockerización, levantamiento y despliegue de proyectos en servidores de prueba.",
-      "Configuración de entornos con Apache, Nginx, certificados HTTPS y FortiClient VPN.",
-      "Implementación de procesos de correo con PHPMailer y Python, usando colas para separar el envío del flujo principal.",
-      "Pruebas unitarias, pruebas de conectividad, documentación técnica, control de versiones, Jira y buenas prácticas de codificación segura."
+      "Dockerización y levantamiento de proyectos en servidores de prueba.",
+      "Configuraciones con Apache, Nginx y certificados HTTPS.",
+      "Pruebas de conectividad y validación de servicios desplegados.",
+      "Uso de consola Linux para diagnóstico, configuración y seguimiento."
     ],
     "decisions": [
-      "Agrupar desarrollo, soporte, despliegue y automatización como frentes de trabajo dentro de una misma plataforma.",
-      "Priorizar trazabilidad, validaciones y manejo de errores para facilitar soporte y mantenimiento.",
-      "Usar entornos aislados con Docker para reducir conflictos de configuración en pruebas.",
-      "Separar procesos de correo del flujo principal para mejorar continuidad de la aplicación.",
-      "Documentar pasos técnicos y cambios relevantes para facilitar continuidad operativa del equipo."
+      "Uso de entornos aislados para disminuir conflictos entre configuraciones.",
+      "Validación de conectividad y certificados antes de entregar ambientes al equipo.",
+      "Documentación de pasos técnicos para facilitar despliegues posteriores."
+    ]
+  },
+  {
+    "slug": "correos-colas-phpmailer-python",
+    "title": "Sistema de correos con colas",
+    "type": "Empresarial",
+    "imageUrl": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80",
+    "projectUrl": "https://example.com/correos-colas-phpmailer-python",
+    "projectUrlLabel": "Ver página",
+    "stack": [
+      "Python",
+      "PHPMailer",
+      "PHP",
+      "Linux",
+      "Logs"
+    ],
+    "summary": "Implementación de sistemas de correo mediante colas, apoyando procesos de envío, trazabilidad y manejo de errores.",
+    "role": "Backend",
+    "context": "Se requería procesar envíos de correo sin bloquear flujos principales y con capacidad de seguimiento ante errores.",
+    "highlights": [
+      "Implementación de procesos de correo usando PHPMailer y Python.",
+      "Uso de colas para separar el envío del flujo principal de la aplicación.",
+      "Registro de eventos para seguimiento y soporte técnico.",
+      "Validaciones previas para reducir fallos en el procesamiento."
+    ],
+    "decisions": [
+      "Separación del proceso de envío para mejorar continuidad de la aplicación.",
+      "Trazabilidad con logs para diagnóstico y soporte.",
+      "Manejo controlado de errores durante el procesamiento."
     ]
   },
   {
@@ -51,7 +95,7 @@
     "type": "Empresarial",
     "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
     "projectUrl": "https://example.com/reportes-bases-datos-labroides",
-    "projectUrlLabel": "Proyecto privado",
+    "projectUrlLabel": "Ver página",
     "stack": [
       "PostgreSQL",
       "MySQL",
