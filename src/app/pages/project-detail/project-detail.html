@@ -11,6 +11,9 @@
         <a class="btn" *ngIf="p.projectUrl" [href]="p.projectUrl" target="_blank" rel="noreferrer">
           {{ p.projectUrlLabel || 'Ver página' }}
         </a>
+        <span class="btn private-btn" *ngIf="!p.projectUrl">
+          {{ p.projectUrlLabel || 'Proyecto privado' }}
+        </span>
         <span class="type">{{ p.type }}</span>
       </div>
     </div>

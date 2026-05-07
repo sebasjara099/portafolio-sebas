@@ -61,6 +61,16 @@
   margin-top: 22px;
 }
 
+.private-btn,
+.private-btn:hover {
+  color: var(--muted);
+  border-color: var(--line);
+  background: rgba(148, 163, 184, 0.08);
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .project-hero {
   position: relative;
   width: 100%;
