@@ -1,0 +1,70 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(8, 13, 20, 0.78) !important;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(18px);
+}
+
+.container-fluid {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.navbar-brand {
+  color: var(--ink);
+  font-weight: 820;
+}
+
+.navbar-brand::after {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 8px;
+  content: "";
+  border-radius: 50%;
+  background: var(--warm);
+}
+
+.navbar-nav {
+  gap: 6px;
+}
+
+.nav-link {
+  border-radius: 8px;
+  color: var(--muted);
+  font-weight: 700;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--brand-strong);
+  background: rgba(45, 212, 191, 0.09);
+}
+
+.navbar-toggler {
+  border-color: rgba(45, 212, 191, 0.26);
+  border-radius: 8px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.2);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1) brightness(1.7);
+}
+
+@media (max-width: 720px) {
+  .container-fluid {
+    width: min(100% - 22px, 1120px);
+  }
+
+  .navbar-collapse {
+    padding-top: 12px;
+  }
+}

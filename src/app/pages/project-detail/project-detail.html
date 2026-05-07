@@ -1,0 +1,65 @@
+<a class="back" routerLink="/proyectos">← Volver a proyectos</a>
+
+<section class="detail page" *ngIf="project$ | async as p; else notFound">
+  <header class="header surface">
+    <div class="header-copy">
+      <p class="eyebrow">Caso de proyecto</p>
+      <h2>{{ p.title }}</h2>
+      <p class="summary">{{ p.summary }}</p>
+
+      <div class="header-actions">
+        <a class="btn" *ngIf="p.projectUrl" [href]="p.projectUrl" target="_blank" rel="noreferrer">
+          {{ p.projectUrlLabel || 'Ver página' }}
+        </a>
+        <span class="type">{{ p.type }}</span>
+      </div>
+    </div>
+
+    <figure class="project-hero">
+      <img [src]="p.imageUrl" [alt]="p.title">
+    </figure>
+  </header>
+
+  <div class="detail-grid">
+    <aside class="meta surface scroll-reveal">
+      <div>
+        <span>Rol</span>
+        <strong>{{ p.role }}</strong>
+      </div>
+      <div>
+        <span>Stack</span>
+        <div class="tags">
+          <span class="tag" *ngFor="let t of p.stack">{{ t }}</span>
+        </div>
+      </div>
+    </aside>
+
+    <div class="content">
+      <section class="section scroll-reveal" *ngIf="p.context">
+        <h3>Contexto</h3>
+        <p>{{ p.context }}</p>
+      </section>
+
+      <section class="section scroll-reveal">
+        <h3>Qué hice</h3>
+        <ul class="nice-list">
+          <li *ngFor="let h of p.highlights">{{ h }}</li>
+        </ul>
+      </section>
+
+      <section class="section scroll-reveal" *ngIf="p.decisions?.length">
+        <h3>Decisiones técnicas</h3>
+        <ul class="nice-list">
+          <li *ngFor="let d of p.decisions">{{ d }}</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</section>
+
+<ng-template #notFound>
+  <section class="not-found surface">
+    <h2>No encontré ese proyecto.</h2>
+    <a class="btn" routerLink="/proyectos">Ver proyectos</a>
+  </section>
+</ng-template>

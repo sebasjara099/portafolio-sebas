@@ -1,0 +1,27 @@
+@if (isPreloading()) {
+  <section class="preloader" aria-label="Cargando portafolio">
+    <div class="preloader-card">
+      <span class="preloader-kicker">Portafolio</span>
+      <strong>Sebastián Jaramillo</strong>
+      <p>Backend · Soporte de aplicaciones · DevOps Junior</p>
+      <div class="preloader-bar" aria-hidden="true">
+        <span></span>
+      </div>
+    </div>
+  </section>
+}
+
+<div class="scroll-progress" [style.transform]="'scaleX(' + scrollProgress() + ')'"></div>
+<div class="ambient-bg" aria-hidden="true">
+  <span class="ambient ambient-one"></span>
+  <span class="ambient ambient-two"></span>
+  <span class="ambient ambient-three"></span>
+</div>
+
+<app-navbar></app-navbar>
+
+<main class="container route-shell" [class.route-enter]="routeTransitioning()">
+  <router-outlet (activate)="onRouteActivate()"></router-outlet>
+</main>
+
+<app-footer></app-footer>

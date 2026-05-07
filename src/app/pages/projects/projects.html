@@ -1,0 +1,48 @@
+<section class="page">
+  <div class="section-title">
+    <p class="eyebrow">Trabajo realizado</p>
+    <h2>Proyectos</h2>
+    <p>
+      Una selección de experiencias donde participé en backend, procesos, datos y validación.
+    </p>
+  </div>
+
+  <div class="grid" *ngIf="projects$ | async as projects; else loading">
+    <article class="card scroll-reveal" *ngFor="let p of projects">
+      <a class="media" [routerLink]="['/proyectos', p.slug]" [attr.aria-label]="'Ver detalle de ' + p.title">
+        <img [src]="p.imageUrl" [alt]="p.title" loading="lazy">
+        <span class="type">{{ p.type }}</span>
+      </a>
+
+      <div class="card-body">
+        <a class="title-link" [routerLink]="['/proyectos', p.slug]">
+          <h3>{{ p.title }}</h3>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+
+        <p class="summary">{{ p.summary }}</p>
+
+        <div class="tags">
+          <span class="tag" *ngFor="let t of p.stack">{{ t }}</span>
+        </div>
+
+        <div class="card-actions">
+          <a class="detail-link" [routerLink]="['/proyectos', p.slug]">Ver detalle</a>
+          <a
+            class="external-link"
+            *ngIf="p.projectUrl"
+            [href]="p.projectUrl"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {{ p.projectUrlLabel || 'Ver página' }}
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<ng-template #loading>
+  <p class="loading">Cargando proyectos...</p>
+</ng-template>
